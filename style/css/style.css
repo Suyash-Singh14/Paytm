@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --light-blue: #00baf2;
+    --dark-blue: #002970;
+}
+
+a{text-decoration: none;color: black;}
+li{list-style: none;}
+button{outline: none; border: none;}
+
+.stick{
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.stick nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+button.signIn{
+    display: flex;
+    background-color: aqua;
+}
