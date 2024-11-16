@@ -312,3 +312,68 @@ button.signIn{
 }
 
 
+/* /////////////// */
+.buisness, .buisnessTools{
+    padding: 0 10%;
+}
+.buisness > h1{
+    font-size: 3rem;
+    margin: 50px 0;
+}
+
+.buisness .box{
+    background-color: #f5f7fa;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 5%;
+}
+
+.buisness .box .left{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 20%;
+}
+ 
+.buisness .box .left h1{
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.buisness .box .left p{
+    width: 120%;
+}
+
+.buisness .learn{
+    align-self: flex-start;
+    margin: 30px 0;
+}
+.buisness .box .right img{width: 80%;padding: 10% 0;}
+.buisness .box .right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* ////////////////// */
+.buisnessTools > h1{
+    font-size: 2rem;
+}
+
+.buisnessTools .ToolsGrid img{width: 100%;}
+
+.buisnessTools .ToolsGrid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 75px;
+}
+
+.buisnessTools h1{
+    margin: 30px 0;
+    width: 70%;
+}
+
+.buisnessTools a{
+    font-weight: bold;
+}
+.buisnessTools p{margin-bottom: 10px;}
