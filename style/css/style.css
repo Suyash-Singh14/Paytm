@@ -9,6 +9,11 @@
     font-family: "Inter", serif;
 }
 
+html::-webkit-scrollbar{width: 0.3vw;}
+html::-webkit-scrollbar-thumb{border-radius:25px;background-color: var(--light-blue);}
+html::-webkit-scrollbar-track{background-color: white;}
+
+body{overflow-x: hidden;}
 a{text-decoration: none;color: black;}
 li{list-style: none;}
 button{outline: none; border: none;}
@@ -18,7 +23,9 @@ button{outline: none; border: none;}
     position: fixed;
     top: 0;
     width: 100%;
-    height: 10vh;
+    padding: 20px 10%;
+    box-shadow: 0 5px 20px rgba(0,41,112,.1);
+    font-weight: bold;
 }
 
 .stick nav{height: 100%;}
@@ -32,7 +39,20 @@ button{outline: none; border: none;}
 
 button.signIn{
     display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
     background-color: var(--light-blue);
+    padding: 0 5px;
+    border-radius: 30px;
+}
+
+.signIn div:nth-child(1){
+    margin: 0 10px;
+}
+
+.signIn .man{
+    border-radius: 50%;
 }
 
 .head{
@@ -42,24 +62,37 @@ button.signIn{
     align-items: center;
     justify-content: center;
     height: 90vh;
-    margin-top: 10vh;
+    margin-top: 100px;
+    padding: 40px 7% 0 7%;
 }
 
 .head .head-container{
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    padding: 5px;
 }
 
 .head .head-container .mode>div{
     display: flex;
+    margin-right: 20px;
     align-items: center;
 }
 .head .head-container .mode{
     display: flex;
     align-items: center;
+    position: relative;
+}
+.head .head-container .mode .flight:nth-child(1)::before{
+    content: '';
+    height: 2px;
+    width: 80px;
+    background-color: var(--light-blue);
+    position: absolute;
+    bottom: 0;
 }
 .head .head-container .LogoTrailer{
-    width: 100px;
+    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,15 +100,22 @@ button.signIn{
 
 .head .flightBookBox{
     background-color: white;
-    border-radius: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    padding: 30px;
+    width: 100%;
 }
 
 .head .flightBookBox .box1{
     display: flex;
     gap: 20px;
+    margin-bottom: 20px;
 }
 
-.head .flightBookBox .box1>div{display: flex;}
+.head .flightBookBox .one-way{font-weight: bold;}
+.head .flightBookBox .box1>div{
+    display: flex;
+}
 .head .flightBookBox>div .checkbox{
     height: 20px;
     width: 20px;
@@ -83,10 +123,138 @@ button.signIn{
     border: 2px solid var(--light-blue);
     margin: 0 5px ;
 }
-
+.head .flightBookBox .one-way .checkbox::before{
+    content: "";
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    position: relative;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: var(--light-blue);
+}
 .head .flightBookBox .box2{
     display: grid;
-    grid-template-columns: repeat(1fr, 12);
+    grid-template-columns: repeat(30, 1fr);
+    gap: 20px;
+}
+
+.head .flightBookBox .box2>div{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.head .flightBookBox .box2 >div >div:nth-child(1){
+    font-size: 12px;
+    color: #474747;
+}
+
+.head .flightBookBox .box2> div > div:nth-child(2){
+    font-weight: bold;
+    font-size: 18px;
+    margin: 10px 0;
+}
+.head .flightBookBox .box2> div > div:nth-child(3){
+    font-size: 12px;
+}
+.head .flightBookBox .box2 .bigBox{
+    grid-column: span 6;
+}
+.head .flightBookBox .box2 .BigBox{grid-column: span 5;}
+
+.head .flightBookBox .box2 .smallBox{
+    grid-column: span 4;
+}
+
+.head .flightBookBox .box2 .MidBox, .head .flightBookBox .box2 button{
+    grid-column: span 5;
+}
+
+.head .flightBookBox .box3{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 15px;
+    color: #474747;
+}
+
+.head .flightBookBox .box2 .return .add-return{
+    margin-top: 30px;
+    color: var(--light-blue);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.head .flightBookBox .box2 .return div:nth-child(2){
+    font-weight: normal;
+    font-size: 12px;
+}
+.head .flightBookBox .box3 .button{
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 5px 10px;
+}
+
+.head .flightBookBox .box2 .transfer{
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-flights{
+    background-color: #00baf2;
+    color: white;
+    height: 50px;
+    align-self: center;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.HeadCarousel{
+    width: 100%;
+    padding: 50px 15px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.HeadCarousel .container{
+    display: flex;
+    transition: all 600ms ease-out;
+}
+
+.HeadCarousel img{
+    width: 400px;
+    border-radius: 25px;
+    margin: 0 15px;
+}
+
+.prev, .next{
+    color: var(--light-blue);
+    background-color: white;
+    font-size: 22px;
+    font-size: bold;
+    border: 2px solid var(--light-blue);
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(0, -50%);
+}
+
+.prev{
+    top: 50%;
+    left: 0;
+    display: none;
+}
+
+.next{
+    top: 50%;
+    right: 0;
 }
 
 /* /////////////////////////// */
@@ -116,6 +284,13 @@ button.signIn{
 }
 
 .recharge-box a{font-weight: bold; font-size: 0.9em;}
+.recharge-box{
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+.recharge-box:hover{
+    background-color: #087292b5;
+}
 .book-box{
     font-weight: bold;
     font-size: 1.2em;
@@ -295,8 +470,12 @@ button.signIn{
     outline: none;
     border: none;
     font-size: 18px;
+    transition: all 500ms;
 }
 
+.learn:hover{
+    background-color: var(--light-blue);
+}
 /* //////////////// */
 .financialServices{padding: 10% 0;}
 .financialServices .grid{
@@ -348,6 +527,7 @@ button.signIn{
     align-self: flex-start;
     margin: 30px 0;
 }
+.buisness .learn:hover{color: var(--dark-blue);}
 .buisness .box .right img{width: 80%;padding: 10% 0;}
 .buisness .box .right{
     display: flex;
@@ -375,5 +555,114 @@ button.signIn{
 
 .buisnessTools a{
     font-weight: bold;
+    position: relative;
+}
+
+.buisnessTools a::before{
+    content: '>';
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: all 400ms ease;
+}
+
+.buisnessTools a:hover::before{
+    right: -20px;
+    opacity: 1;
 }
 .buisnessTools p{margin-bottom: 10px;}
+
+/* ///////////////// */
+.carouselBox{
+    padding: 15%;
+    padding-bottom: 0;
+}
+.carouselBox .box{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 50px;
+    overflow-x: hidden;
+    margin-bottom: 15%;
+}
+.carouselBox .box .content{width: 200px;}
+
+.carouselBox .box .carousel{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 50px;
+}
+.carouselBox .box .carousel .card{
+    width: 150px;
+    background-color: #00baf2;
+    text-align: center;
+    padding: 5px;
+    border-radius: 15px;
+    color: white;
+}
+.carouselBox .box .carousel .card img{
+    width: 100%;
+    border-radius: 15px;
+    opacity: 0.75;
+}
+
+.carouselBox .box:nth-child(1) .carousel .card h1{
+    font-size: 20px;
+    margin: 10px 0;
+}
+.carouselBox .box .content .logo img{
+    width: 120px;
+}
+.carouselBox .box .content p{margin: 50px 0 20px 0;}
+.carouselBox .box .content a{
+    color: #00baf2;
+}
+
+.carouselBox .box:nth-child(2) .card img{
+    width: 70px;
+    margin-bottom: 20px;
+    text-align: start;
+}
+.carouselBox .box:nth-child(2) .card{
+    padding: 40px 10px;
+    text-align: start;
+    font-size: 0.7em;
+}
+
+/* //////////////// */
+footer{
+    padding: 5% 8%;
+    background-color: #f5f7fa;
+}
+
+footer .social-links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+footer .social-links .left, footer .social-links .right ul{
+    display: flex;
+    gap: 10px;
+}
+footer .social-links .right li{margin: 0 10px;}
+footer .social-links h1{
+    font-size: 18px;
+    width: 200px;
+}
+
+.line{
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+.line1{
+    height: 10px;
+    background-color: #00baf2;
+}
+.line2{
+    height: 10px;
+    background-color: #002970;
+}
