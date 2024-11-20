@@ -26,6 +26,7 @@ button{outline: none; border: none;}
     padding: 20px 10%;
     box-shadow: 0 5px 20px rgba(0,41,112,.1);
     font-weight: bold;
+    z-index: 10;
 }
 
 .stick nav{height: 100%;}
@@ -224,6 +225,8 @@ button.signIn{
 .HeadCarousel .container{
     display: flex;
     transition: all 600ms ease-out;
+    position: relative;
+    right: 0;
 }
 
 .HeadCarousel img{
@@ -243,6 +246,7 @@ button.signIn{
     text-align: center;
     border-radius: 50%;
     position: absolute;
+    z-index: 4;
     transform: translate(0, -50%);
 }
 
@@ -256,6 +260,7 @@ button.signIn{
     top: 50%;
     right: 0;
 }
+
 
 /* /////////////////////////// */
 .recharge, .Book{
@@ -588,11 +593,20 @@ button.signIn{
 }
 .carouselBox .box .content{width: 200px;}
 
-.carouselBox .box .carousel{
+.carouselBox .box .carouselContainer{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 50px;
+    position: relative;
+    right: 0;
+    transition: all 500px ease-out;
 }
+
+.carouselBox .box .carousel{
+    overflow: hidden;
+    position: relative;
+}
+
 .carouselBox .box .carousel .card{
     width: 150px;
     background-color: #00baf2;
